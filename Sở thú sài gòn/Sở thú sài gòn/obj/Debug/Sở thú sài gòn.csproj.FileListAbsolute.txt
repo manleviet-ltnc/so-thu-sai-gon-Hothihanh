@@ -1,0 +1,10 @@
+D:\github\so-thu-sai-gon-Hothihanh\Sở thú sài gòn\Sở thú sài gòn\bin\Debug\Sở thú sài gòn.exe.config
+D:\github\so-thu-sai-gon-Hothihanh\Sở thú sài gòn\Sở thú sài gòn\bin\Debug\Sở thú sài gòn.exe
+D:\github\so-thu-sai-gon-Hothihanh\Sở thú sài gòn\Sở thú sài gòn\bin\Debug\Sở thú sài gòn.pdb
+D:\github\so-thu-sai-gon-Hothihanh\Sở thú sài gòn\Sở thú sài gòn\obj\Debug\Sở thú sài gòn.csprojResolveAssemblyReference.cache
+D:\github\so-thu-sai-gon-Hothihanh\Sở thú sài gòn\Sở thú sài gòn\obj\Debug\Sở_thú_sài_gòn.Form1.resources
+D:\github\so-thu-sai-gon-Hothihanh\Sở thú sài gòn\Sở thú sài gòn\obj\Debug\Sở_thú_sài_gòn.Properties.Resources.resources
+D:\github\so-thu-sai-gon-Hothihanh\Sở thú sài gòn\Sở thú sài gòn\obj\Debug\Sở thú sài gòn.csproj.GenerateResource.Cache
+D:\github\so-thu-sai-gon-Hothihanh\Sở thú sài gòn\Sở thú sài gòn\obj\Debug\Sở thú sài gòn.csproj.CoreCompileInputs.cache
+D:\github\so-thu-sai-gon-Hothihanh\Sở thú sài gòn\Sở thú sài gòn\obj\Debug\Sở thú sài gòn.exe
+D:\github\so-thu-sai-gon-Hothihanh\Sở thú sài gòn\Sở thú sài gòn\obj\Debug\Sở thú sài gòn.pdb
