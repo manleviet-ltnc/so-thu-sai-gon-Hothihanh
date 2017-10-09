@@ -43,12 +43,28 @@ namespace Sở_thú_sài_gòn
         private void lstDanhsach_DragDrop(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.Text))
-            {
-                ListBox lb = (ListBox)sender;
-                lb.Items.Add(e.Data.GetData(DataFormats.Text));
-            }
-        }
+                {
+                bool test = false;
+                for (int i = 0; i < lstDanhsach.Items.Count; i++)
+                {
+                    string st = lstDanhsach.Items[i].ToString();
+                    string data = e.Data.SetData(DataFormats.Text).ToString();
+                    if (data == st)
+                        test = true;
+                }
 
+                {
+                    int newIndex = lstDanhsach.IndexFromPoint(lstDanhsach.PointToClient(new Point(e.X, e.Y)));
+                    object selectedItem = e.Data.GetData(DataFormats.Text);
+
+                    lstDanhsach.Items.Remove(selectedItem);
+                    if (newIndex != -1)
+                        lstDanhsach.Items.Insert(newIndex, selectedItem);
+                    else
+                        lstDanhsach.Items.Insert(lstDanhsach.Items.Count, selectedItem);
+                }
+        }
+ 
         private void Save(object sender, EventArgs e)
         {
             // mở tập tin
@@ -110,5 +126,30 @@ namespace Sở_thú_sài_gòn
         {
             timer1.Enabled = true;
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            lstDanhsach.Items.Remove(lstDanhsach.SelectedItem);
+        }
     }
-}
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (luu == false)
+            {
+                DialogResult kq = MessageBox.Show("Bạn có muốn lưu danh sách?", "THÔNG BÁO",
+                                  MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (kq == DialogResult.Yes)
+                {
+                    save(sender, e);
+                    e.Cancel = false;
+                }
+                else if (kq == DialogResult.No)
+                    e.Cancel = false;
+                else
+                    e.Cancel = true;
+            }
+            else
+                mnuClose_Click(sender, e);
+        }
+    }

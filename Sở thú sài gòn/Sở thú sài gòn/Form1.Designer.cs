@@ -49,7 +49,9 @@
             this.mnuCopy = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCut = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPaste = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnXoa = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +68,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(211, 0);
+            this.label2.Location = new System.Drawing.Point(224, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 13);
             this.label2.TabIndex = 1;
@@ -79,7 +81,7 @@
             this.lstThumoi.FormattingEnabled = true;
             this.lstThumoi.Location = new System.Drawing.Point(3, 16);
             this.lstThumoi.Name = "lstThumoi";
-            this.lstThumoi.Size = new System.Drawing.Size(202, 202);
+            this.lstThumoi.Size = new System.Drawing.Size(215, 148);
             this.lstThumoi.TabIndex = 2;
             this.toolTip1.SetToolTip(this.lstThumoi, "Ấn chuột và kéo sang danh sách thú để tạo sở thú");
             this.lstThumoi.DragEnter += new System.Windows.Forms.DragEventHandler(this.ListBox_DragEnter);
@@ -90,9 +92,9 @@
             this.lstDanhsach.AllowDrop = true;
             this.lstDanhsach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstDanhsach.FormattingEnabled = true;
-            this.lstDanhsach.Location = new System.Drawing.Point(211, 16);
+            this.lstDanhsach.Location = new System.Drawing.Point(224, 16);
             this.lstDanhsach.Name = "lstDanhsach";
-            this.lstDanhsach.Size = new System.Drawing.Size(202, 202);
+            this.lstDanhsach.Size = new System.Drawing.Size(215, 148);
             this.lstDanhsach.TabIndex = 3;
             this.lstDanhsach.DragDrop += new System.Windows.Forms.DragEventHandler(this.lstDanhsach_DragDrop);
             this.lstDanhsach.DragEnter += new System.Windows.Forms.DragEventHandler(this.ListBox_DragEnter);
@@ -104,13 +106,12 @@
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.ImageIndex = 0;
             this.btnSave.ImageList = this.imageList1;
-            this.btnSave.Location = new System.Drawing.Point(389, 253);
+            this.btnSave.Location = new System.Drawing.Point(415, 199);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(24, 23);
             this.btnSave.TabIndex = 7;
             this.toolTip1.SetToolTip(this.btnSave, "lưu danh sách con thú vào file danhsachthu.txt");
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.Save);
             // 
             // imageList1
             // 
@@ -129,22 +130,21 @@
             this.tableLayoutPanel1.Controls.Add(this.lstThumoi, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblTime, 0, 2);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 27);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(416, 279);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(442, 225);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.lblTime, 2);
-            this.lblTime.Location = new System.Drawing.Point(3, 221);
+            this.lblTime.Location = new System.Drawing.Point(3, 167);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(103, 13);
             this.lblTime.TabIndex = 5;
@@ -157,7 +157,7 @@
             this.sửaĐổiToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(416, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(445, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -177,7 +177,6 @@
             this.mnuLoad.Name = "mnuLoad";
             this.mnuLoad.Size = new System.Drawing.Size(191, 22);
             this.mnuLoad.Text = "Tải danh sách";
-            this.mnuLoad.Click += new System.EventHandler(this.mnuLoad_Click);
             // 
             // mnuSave
             // 
@@ -186,7 +185,6 @@
             this.mnuSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.mnuSave.Size = new System.Drawing.Size(191, 22);
             this.mnuSave.Text = "Lưu danh sách";
-            this.mnuSave.Click += new System.EventHandler(this.Save);
             // 
             // toolStripSeparator1
             // 
@@ -198,14 +196,14 @@
             this.mnuClose.Name = "mnuClose";
             this.mnuClose.Size = new System.Drawing.Size(191, 22);
             this.mnuClose.Text = "Kết thúc";
-            this.mnuClose.Click += new System.EventHandler(this.mnuClose_Click);
             // 
             // sửaĐổiToolStripMenuItem
             // 
             this.sửaĐổiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuCopy,
             this.mnuCut,
-            this.mnuPaste});
+            this.mnuPaste,
+            this.mnuDelete});
             this.sửaĐổiToolStripMenuItem.Name = "sửaĐổiToolStripMenuItem";
             this.sửaĐổiToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.sửaĐổiToolStripMenuItem.Text = "Sửa đổi";
@@ -231,15 +229,28 @@
             this.mnuPaste.Size = new System.Drawing.Size(136, 22);
             this.mnuPaste.Text = "Dán";
             // 
-            // timer1
+            // mnuDelete
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.mnuDelete.Name = "mnuDelete";
+            this.mnuDelete.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.mnuDelete.Size = new System.Drawing.Size(136, 22);
+            this.mnuDelete.Text = "Xóa";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(367, 258);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.TabIndex = 7;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 303);
+            this.ClientSize = new System.Drawing.Size(445, 296);
+            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -249,7 +260,7 @@
             this.MinimumSize = new System.Drawing.Size(289, 235);
             this.Name = "Form1";
             this.Text = "Sở thú Xì Gòn";
-            this.Load += new System.EventHandler(this.Form1_Load_1);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -281,6 +292,8 @@
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.ToolStripMenuItem mnuDelete;
     }
 }
 
